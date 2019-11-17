@@ -32,8 +32,6 @@ Hotel Management System
 
 --Room
 
---RoomService
-
 --Customer
 
 --Customer Database
