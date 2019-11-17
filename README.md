@@ -14,31 +14,31 @@ Hotel Management System
 - Booking a cinema ticket for the client.
 # Classes
 
--Logger:
+- Logger:
 
--Director:
+- Director:
 -- Employees
 -- Facility
 
--Employees:
+- Employees:
 -- Receptionist
 -- Cleaner
 
--Receptionist:
+- Receptionist:
 -- Room
 -- RoomService
 -- Customer
 -- Customer Database
 -- Room Database
 
--Cleaner:
+- Cleaner:
 -- Room Database
 
--Facility:
+- Facility:
 -- Cinema
 -- SwimmingPool
 -- Gym
--Restaurant:	
+- Restaurant:	
 --Table
 
 
