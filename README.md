@@ -56,4 +56,6 @@ Hotel Management System
 
 --Table
 
-
+# Team Members
+-Anouar Meziou
+-Vladimir Lobahev
