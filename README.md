@@ -19,19 +19,25 @@ Hotel Management System
 - Director:
 
 --Employees
+
 --Facility
 
 - Employees:
 
 --Receptionist
+
 --Cleaner
 
 - Receptionist:
 
 --Room
+
 --RoomService
+
 --Customer
+
 --Customer Database
+
 --Room Database
 
 - Cleaner:
@@ -41,9 +47,13 @@ Hotel Management System
 - Facility:
 
 --Cinema
+
 --SwimmingPool
+
 --Gym
+
 - Restaurant:	
+
 --Table
 
 
