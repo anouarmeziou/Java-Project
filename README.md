@@ -17,27 +17,32 @@ Hotel Management System
 - Logger:
 
 - Director:
--- Employees
--- Facility
+
+--Employees
+--Facility
 
 - Employees:
--- Receptionist
--- Cleaner
+
+--Receptionist
+--Cleaner
 
 - Receptionist:
--- Room
--- RoomService
--- Customer
--- Customer Database
--- Room Database
+
+--Room
+--RoomService
+--Customer
+--Customer Database
+--Room Database
 
 - Cleaner:
+
 -- Room Database
 
 - Facility:
--- Cinema
--- SwimmingPool
--- Gym
+
+--Cinema
+--SwimmingPool
+--Gym
 - Restaurant:	
 --Table
 
