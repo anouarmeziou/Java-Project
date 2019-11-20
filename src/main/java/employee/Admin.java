@@ -1,8 +1,8 @@
 package employee;
 
-private class Admin {
-    
-    private short id = 100;
+public class Admin extends Employee {
+
+    private short id = 0;
 
     private void hire() {
 
