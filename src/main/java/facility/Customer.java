@@ -1,4 +1,4 @@
-package space.harbour.java.project;
+package main.java.facility;
 
 public class Customer {
     private String id;
