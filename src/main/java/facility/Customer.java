@@ -1,24 +1,25 @@
 package main.java.facility;
 
 public class Customer {
-    private String id;
+    private Integer _id;
     private String name;
     private String bankAcc;
     private boolean paid = false;
 
-    public Customer(String i, String n, String b, boolean p) {
+
+    public Customer(int i, String n, String b) {
         this.bankAcc = b;
-        this.id = i;
+        this._id = i;
         this.name = n;
-        this.paid = p;
+        this.paid = false;
     }
 
     /**
      *
      * @return id
      */
-    public String getId() {
-        return this.id;
+    public Integer getId() {
+        return this._id;
     }
 
     /**
@@ -34,7 +35,7 @@ public class Customer {
      * @return bankAccount
      */
     public String getBankAcc() {
-        return this.id;
+        return this.bankAcc;
     }
 
 
@@ -60,6 +61,6 @@ public class Customer {
      * @return customer to string
      */
     public String toString() {
-        return "Customer [" + "id=" + id + ", name=" + name + ", bankAcc=" + bankAcc + "]";
+        return "Customer [" + "id=" + _id + ", name=" + name + ", bankAcc=" + bankAcc + "]";
     }
 }

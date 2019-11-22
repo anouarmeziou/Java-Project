@@ -1,8 +1,6 @@
-package employee;
+package main.java.employee;
 
 public class Admin extends Employee {
-
-    private short id = 0;
 
     private void hire() {
 

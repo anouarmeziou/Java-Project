@@ -1,4 +1,4 @@
-package employee;
+package main.java.employee;
 
 public class Cleaner extends Employee {
 

@@ -1,23 +1,32 @@
-package employee;
+package main.java.employee;
 
 public class Employee {
 
     private static final String[] PROFILES
      = new String[] {"Receptionist", "Manager", "Cleaner"};
 
-    private Short id;
+    private Integer _id;
     private String firstName;
     private String lastName;
     private String profile;
     private Integer salary;
     private boolean atWork;
 
+    // public Employee(int id, String fname, String lname, String prof, Integer salar) {
+    //     this._id = id;
+    //     this.firstName = fname;
+    //     this.lastName = lname;
+    //     this.profile = prof;
+    //     this.salary = salar;
+    //     this.atWork = false;
+    // }
+
 
     /**
      * @return id
      */
-    public Short getId() {
-        return id;
+    public Integer getId() {
+        return _id;
     }
 
     /**
@@ -86,7 +95,7 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee [id="
-         + id + ", firstName="
+         + _id + ", firstName="
           + firstName + ", lastName="
            + lastName + "]";
     }
