@@ -8,15 +8,16 @@ public class Room {
 	 */
 		
 	public Integer _id;
-	public Integer beds;
+	public Integer numOfBeds;
 
 	public Room(int id, Integer n) {
 		this._id = id;
-		this.beds = n;
+		this.numOfBeds = n;
 	}
 
     @Override
     public String toString() {
-        return "Room [id=" + _id + ", numOfBeds=" + beds+ "]";
+        return "Room [id=" + _id + ", numOfBeds=" + numOfBeds+ "]";
     }
+
 }

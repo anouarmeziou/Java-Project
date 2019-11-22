@@ -2,6 +2,10 @@ package main.java.employee;
 
 public class Receptionist extends Employee {
 
+	Receptionist(String fname, String lname, String prof) {
+		super(fname, lname, prof);
+	}
+
     /**
      *  returns Employee descrioption.
      */
