@@ -32,6 +32,9 @@ public class Mongo {
 	final Gson gson = new Gson();
 
 
+	/**
+	 * opens the connection for local mongoDB.
+	 */
 	public void mongoSetUp() {
 
 		MongoClientOptions.Builder builder = new MongoClientOptions.Builder();
@@ -43,11 +46,18 @@ public class Mongo {
 		client = database.getCollection("Client");
 	}
 
+
+	/**
+	 * closes the connection for local mongoDB.
+	 */
 	public void closeConnection() {
 		mongoClient.close();
 	}
 
-
+	/**
+	 * Stores a single item in db
+	 * @param obj object
+	 */
 	public void storeItem(Object obj) {
 		if (obj != null) {
 			String className = obj.getClass().getSimpleName();
@@ -60,7 +70,10 @@ public class Mongo {
 			}
 		}
 	}
-
+	/**
+	 * stores a list of objects
+	 * @param list of objects
+	 */
 	public void storeList(List<Object> list) {
 		if (list.size() > 0) {
 			String className;
@@ -69,7 +82,10 @@ public class Mongo {
 			}
 		}
 	}
-
+	/**
+	 * prints out all data for a specific type
+	 * @param type {employye, room, customer}
+	 */
 	public void getList(String type) {
 		if (type.equals("Employee")) {
 			printList(empl.find(), type);
@@ -80,6 +96,12 @@ public class Mongo {
 		}
 	}
 
+	/**
+	 * prints out all data for a specific type
+	 * @param type  {employye, room, customer}
+	 * @param query one of the fields to be compared
+	 * @param value comparable value of type String
+	 */
 	public void getList(String type, String query, String value) {
 		if (type.equals("Employee")) {
 			printList(empl.find(Filters.eq(query, value)), type);
@@ -90,6 +112,13 @@ public class Mongo {
 		}
 	}
 
+
+	/**
+	 * prints out all data for a specific type
+	 * @param type  {employye, room, customer}
+	 * @param query one of the fields to be compared
+	 * @param value comparable value of type int
+	 */
 	public void getList(String type, String query, int value) {
 		if (type.equals("Employee")) {
 			printList(empl.find(Filters.eq(query, value)), type);
@@ -100,17 +129,11 @@ public class Mongo {
 		}
 	}
 
-	// public void getList(String type, String query_1, int value, String query_2, boolean b) {
-	// 	if (type == "Employee") {
-	// 		printList(empl.find(Filters.and(Filters.eq(query_1, value), Filters.eq(query_2, b)), type));
-	// 	} else if (type == "Room") {
-	// 		printList(room.find(Filters.and(Filters.eq(query_1, value), Filters.eq(query_2, b)), type));
-	// 	} else if (type == "Customer") {
-	// 		printList(client.find(Filters.and(Filters.eq(query_1, value), Filters.eq(query_2, b)), type));
-	// 	}
-	// }
-
-
+	/**
+	 * calls toString for each object
+	 * @param docs list of docs
+	 * @param type {employye, room, customer}
+	 */
 	private void printList(FindIterable<Document> docs, String type) {
 		for (Document doc: docs) {
 			if (type.equals("Employee")) {

@@ -11,12 +11,14 @@ import main.java.customer.Customer;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Main {
 
     private static final int PORT = 8008;
 
     public final static Mongo mongo = new Mongo();
+    public final Random random = new Random();
 
 
 
@@ -24,35 +26,18 @@ public class Main {
 
         mongo.mongoSetUp();
 
-        //Employee admin = new Admin(mongo);
+        List<Object> list = new ArrayList<>();
+        for (int i=0; i<5; i++) {
+            list.add(new Room(random.nextInt(Integer.MAX_VALUE), i+1));
+            list.add(new Employee("Bob_"+i, "Ross_"+i, "Receptionist", i+1*100));
+            list.add(new Customer(random.nextInt(Integer.MAX_VALUE), "Bill_"+i, "12345_"+i));
+        }
 
-
-
-
-        // try (ServerSocket s = new ServerSocket(PORT)) {
-        //     System.out.println("Server started on port " + PORT);
-        //     while (true) {
-
-        //     }
-        // } catch (IOException e) {
-        //     System.out.println("Server failed on port " + PORT);
-        // }   
-
-        // List<Object> list = new ArrayList<>();
-        // List<Object> empls = new ArrayList<>();
-        // List<Object> clients = new ArrayList<>();
-        // for (int i=0; i<5; i++) {
-        //     list.add(new Room(random.nextInt(Integer.MAX_VALUE), i+1));
-        //     //empls.add(new Employee(random.nextInt(Integer.MAX_VALUE), "Bob_"+i, "Ross_"+i, "Receptionist", i+1*100));
-        //     list.add(new Customer(random.nextInt(Integer.MAX_VALUE), "Bill_"+i, "12345_"+i));
-        // }
-
-        //mongo.storeList(list);
-        //mongo.getList("Room");
-        //mongo.getList("Customer");
-        //mongo.getList("Room");
-        //mongo.getList("Room", "numOfBeds", 2);
-        //mongo.getList("Customer");
+        mongo.storeList(list);
+        mongo.getList("Room");
+        mongo.getList("Customer");
+        mongo.getList("Employee");
+        mongo.getList("Room", "numOfBeds", 2);
 
         mongo.closeConnection();
         
