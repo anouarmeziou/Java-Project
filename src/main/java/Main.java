@@ -28,8 +28,8 @@ public class Main {
 
         List<Object> list = new ArrayList<>();
         for (int i=0; i<5; i++) {
-            list.add(new Room(random.nextInt(Integer.MAX_VALUE), i+1));
-            list.add(new Employee("Bob_"+i, "Ross_"+i, "Receptionist", i+1*100));
+            list.add(new Room());
+            list.add(new Employee("Bob_"+i, "Ross_"+i, "Receptionist"));
             list.add(new Customer(random.nextInt(Integer.MAX_VALUE), "Bill_"+i, "12345_"+i));
         }
 
