@@ -1,44 +1,10 @@
-import java.io.IOException;
-import java.net.ServerSocket;
-
-import main.java.database.Mongo;
-import main.java.employee.Employee;
-import main.java.facility.Room;
-import main.java.facility.Customer;
-
-import java.util.Random;
-import java.util.List;
-import java.util.ArrayList;
+import main.java.facility.Facility;
 
 public class Main {
-
-    private static final int PORT = 8008;
-
-
-    final static Random random = new Random();
-    final static Mongo mongo = new Mongo();
-
     public static void main(String[] args) {
+        main.java.facility.Facility facility = new Facility();
 
-        // try (ServerSocket s = new ServerSocket(PORT)) {
-        //     System.out.println("Server started on port " + PORT);
-        //     while (true) {
-
-        //     }
-        // } catch (IOException e) {
-        //     System.out.println("Server failed on port " + PORT);
-        // }   
-        mongo.mongoSetUp();
-
-        List<Room> rooms = new ArrayList<>();
-        List<Employee> empls = new ArrayList<>();
-        List<Customer> clients = new ArrayList<>();
-        for (int i=0; i<5; i++) {
-            rooms.add(new Room(random.nextInt(Integer.MAX_VALUE), i+1));
-            //empls.add(new Employee(random.nextInt(Integer.MAX_VALUE), "Bob_"+i, "Ross_"+i, "Receptionist", i+1*100));
-            clients.add(new Customer(random.nextInt(Integer.MAX_VALUE), "Bill_"+i, "12345_"+i));
-        }
 
     }
-}
 
+}

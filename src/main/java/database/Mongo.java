@@ -1,8 +1,6 @@
 package main.java.database;
 
-import java.net.UnknownHostException;
 import java.util.List;
-import java.util.ArrayList;
 
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoDatabase;
@@ -14,7 +12,7 @@ import org.bson.Document;
 import com.google.gson.Gson;
 
 import main.java.employee.Employee;
-import main.java.facility.Room;
+import facility.Room;
 import main.java.facility.Customer;
 
 

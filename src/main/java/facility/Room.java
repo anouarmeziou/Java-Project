@@ -1,4 +1,4 @@
-package main.java.facility;
+package facility;
 
 
 import java.util.Random;
@@ -32,7 +32,7 @@ public class Room {
 		 return available;
 	}
 
-	public boolean checkIn(Customer customer) {
+	public boolean checkIn(main.java.facility.Customer customer) {
 		customerId = customer.getId();
 		return available = false;
 	}
