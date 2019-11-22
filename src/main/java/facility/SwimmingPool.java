@@ -4,6 +4,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
+/**
+ *
+ */
 public class SwimmingPool extends Facility implements Availability{
     SimpleDateFormat parser = new SimpleDateFormat("HH:mm");
     Date six = parser.parse("06:00");
