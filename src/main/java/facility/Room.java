@@ -18,6 +18,7 @@ public class Room {
 	public Room(int id, Integer n) {
 		this._id = id;
 		this.numOfBeds = n;
+	}
 
 	public Integer beds;
 	public boolean available = true;
@@ -33,15 +34,12 @@ public class Room {
         return "Room [id=" + _id + ", numOfBeds=" + numOfBeds+ "]";
     }
 
-
-
-
 	public boolean availability() {
 		 return available;
 	}
 
-	public boolean checkIn(Customer customer) {
-		customerId = customer.getId();
+	public boolean checkIn(Integer customerId) {
+		this.customerId = customerId;
 		return available = false;
 	}
 

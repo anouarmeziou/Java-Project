@@ -6,7 +6,7 @@ public class Employee {
 
     Random random = new Random();
 
-    private static final String[] PROFILES
+    protected static final String[] PROFILES
      = new String[] {"Receptionist", "Manager", "Cleaner"};
 
     private Integer _id;
