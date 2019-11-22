@@ -4,20 +4,28 @@ package main.java.facility;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 /**
  * Gym is a class that allows the user to increase and decrease the capcity of people at the Gym.
  * It also checks if the gym is available and open.
  */
 public class Gym extends Facility implements Availability{
-    SimpleDateFormat parser = new SimpleDateFormat("HH:mm");
-    Date six = parser.parse("06:00");
-    Date eighteen = parser.parse("18:00");
 
     private int MAX_CAPACITY = 100;
     public int ACTUAL_NUMBER = 0;
 
+    SimpleDateFormat parser = new SimpleDateFormat("HH:mm");
+    Date six;
+    Date eighteen;
 
-    public Gym() throws ParseException {
+
+    public Gym() {
+        try {
+            six = parser.parse("06:00");
+            eighteen = parser.parse("18:00");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 
     /**

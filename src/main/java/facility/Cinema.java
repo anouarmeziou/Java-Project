@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Cinema is class that allows the user to increase and decrease the capcity of people at the cinema
+ * Cinema is class that allows the manager to increase and decrease the capacity of people at the cinema
  * It also return a movie name according to userTime.
  * It also checks if the gym is available and open.
  */
@@ -17,18 +17,28 @@ public class Cinema extends Facility implements Availability {
     public int ACTUAL_NUMBER = 0;
     List<String> movies = Arrays.asList("Joker", "Blade Runner", "James Bond", "Lucy", "Pineapple Express");
     SimpleDateFormat parser = new SimpleDateFormat("HH:mm");
-    Date ten = parser.parse("10:00");
-    Date twelve = parser.parse("12:00");
-    Date fourteen = parser.parse("14:00");
-    Date eighteen = parser.parse("18:00");
-    Date twenty = parser.parse("20:00");
-    Date twentyTwo = parser.parse("22:00");
+    Date ten;
+    Date twelve;
+    Date fourteen;
+    Date eighteen;
+    Date twenty;
+    Date twentyTwo;
 
-    public Cinema() throws ParseException {
+    public Cinema() {
+        try {
+            ten = parser.parse("10:00");
+            twelve = parser.parse("12:00");
+            fourteen = parser.parse("14:00");
+            eighteen = parser.parse("18:00");
+            twenty = parser.parse("20:00");
+            twentyTwo = parser.parse("22:00");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 
+
     /**
-     *
      * @param userTime same param as in the interface
      * @return movieName or if the user is not in time of movie it will return a string
      */

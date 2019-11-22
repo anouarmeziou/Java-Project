@@ -1,8 +1,12 @@
 package main.java.employee;
 
+import java.util.Random;
+
 public class Employee {
 
-    private static final String[] PROFILES
+    Random random = new Random();
+
+    protected static final String[] PROFILES
      = new String[] {"Receptionist", "Manager", "Cleaner"};
 
     private Integer _id;
@@ -12,14 +16,21 @@ public class Employee {
     private Integer salary;
     private boolean atWork;
 
-    // public Employee(int id, String fname, String lname, String prof, Integer salar) {
-    //     this._id = id;
-    //     this.firstName = fname;
-    //     this.lastName = lname;
-    //     this.profile = prof;
-    //     this.salary = salar;
-    //     this.atWork = false;
-    // }
+    public Employee(String fname, String lname, String prof) {
+        this._id = random.nextInt(Integer.MAX_VALUE) + 1;
+        this.firstName = fname;
+        this.lastName = lname;
+        this.profile = prof;
+        if (prof.equals(PROFILES[0]) || prof.equals(PROFILES[1])) {
+            this.salary = 1000;
+        } else if (prof.equals(PROFILES[2])) {
+            this.salary = 800;
+        } else if (prof.equals("admin")) {
+            this.salary = 69696969;
+            this._id = 0;
+        }
+        this.atWork = false;
+    }
 
 
     /**
@@ -68,7 +79,7 @@ public class Employee {
      * employee starts working.
      * @return true
      */
-    public boolean startWork() {
+    public boolean singIn() {
         if (!atWork) {
             atWork = !atWork;
             return true;
@@ -81,7 +92,7 @@ public class Employee {
      * employee leaves work.
      * @return true
      */
-    public boolean finishWork() {
+    public boolean singOut() {
         if (atWork) {
             atWork = !atWork;
             return true;
@@ -94,9 +105,6 @@ public class Employee {
      */
     @Override
     public String toString() {
-        return "Employee [id="
-         + _id + ", firstName="
-          + firstName + ", lastName="
-           + lastName + "]";
+        return "Employee [id=" + _id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
     }
 }

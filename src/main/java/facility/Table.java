@@ -2,6 +2,10 @@ package main.java.facility;
 
 import java.util.Date;
 
+/**
+ * Table is a class that allows class restaurant to access its availability.
+ * It is one big table so that the manager control the seats manually by increasing and decreasing the capacity of people.
+ */
 public class Table implements Availability {
 
     private int MAX_CAPACITY = 100;
