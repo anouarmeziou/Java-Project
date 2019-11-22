@@ -18,7 +18,7 @@ public class Main {
     private static final int PORT = 8008;
 
     public final static Mongo mongo = new Mongo();
-    public final Random random = new Random();
+    public final static Random random = new Random();
 
 
 
@@ -33,6 +33,8 @@ public class Main {
             list.add(new Customer(random.nextInt(Integer.MAX_VALUE), "Bill_"+i, "12345_"+i));
         }
 
+
+        
         mongo.storeList(list);
         mongo.getList("Room");
         mongo.getList("Customer");

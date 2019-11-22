@@ -1,4 +1,4 @@
-package customer;
+package main.java.customer;
 
 public class Customer {
     private Integer _id;
