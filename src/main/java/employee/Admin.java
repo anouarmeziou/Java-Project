@@ -13,6 +13,12 @@ public class Admin extends Employee {
 		this.mongo = mongo;
 	}
 
+    /**
+     * hires an employee and stores it in DB
+     * @param fname firstname
+     * @param lname lastname
+     * @param prof  profile
+     */
     private void hire(String fname, String lname, String prof) {
     	Employee emp = null;
     	if (prof.equals(super.PROFILES[0])) {
